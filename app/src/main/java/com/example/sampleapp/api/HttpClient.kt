@@ -1,16 +1,18 @@
 package com.example.sampleapp.api
 
-import retrofit2.Response
-import retrofit2.http.GET
+import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 /**
  * Created by Robert Duriancik on 16/01/2023.
  */
-object HttpClient {
+internal object HttpClient {
+    private const val BASE_URL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/"
 
-}
-
-interface Test {
-    @GET
-    fun test(): Response<Unit>
+    val client: Retrofit by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(MoshiConverterFactory.create())
+            .build()
+    }
 }
