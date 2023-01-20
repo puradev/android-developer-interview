@@ -73,13 +73,14 @@ fun MainScreen() {
             ) {
                 OutlinedTextField(
                     value = "",
-                    onValueChange = {},
+                    onValueChange = { /* TODO */ },
+                    textStyle = TextStyle(fontSize = 14.sp),
                     label = { Text("Enter word") },
                     singleLine = true,
                     maxLines = 1,
                     modifier = Modifier
                         .weight(1f)
-                        .height(56.dp)
+                        .height(58.dp)
                 )
                 Button(
                     onClick = { /*TODO*/ },
