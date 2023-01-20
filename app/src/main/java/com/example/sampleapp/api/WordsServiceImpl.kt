@@ -9,7 +9,7 @@ import retrofit2.Response
 internal class WordsServiceImpl : WordsService {
     private val api = HttpClient.client.create(WordsApi::class.java)
 
-    override suspend fun getDefinitions(word: String): Response<GetDefinitionResponseEntity> {
+    override suspend fun getDefinitions(word: String): Response<List<GetDefinitionResponseEntity>> {
         return api.getDefinitions(word, BuildConfig.DICTIONARY_API_KEY)
     }
 }

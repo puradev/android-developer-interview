@@ -13,5 +13,5 @@ interface WordsApi {
     suspend fun getDefinitions(
         @Path("word") word: String,
         @Query("key") apiKey: String
-    ): Response<GetDefinitionResponseEntity>
+    ): Response<List<GetDefinitionResponseEntity>>
 }
