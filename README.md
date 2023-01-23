@@ -22,7 +22,7 @@ A few things we will consider:
 
 Be prepared to talk about which improvements you made and why you made them in the next interview.
 
-Feel free to reach out with any questions. robert@pura.com
+Feel free to reach out with any questions: robert@pura.com
 
 ### App
 
@@ -38,10 +38,10 @@ and Documentation can be found [here](https://dictionaryapi.com/products/json)
 
 ### Suggestions
 
-- Improve the user experience
+- Add views for content and empty state
+- Implement data flow and the request call with a provided word
+- Error handling and display errors to user
 - Unit Tests or UI Tests
-- View for empty state
-- Error handling and display Errors to user
 - Add an easter egg or something to make us laugh
   - Giphy of the searched word
   - Konami Code
