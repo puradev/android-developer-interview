@@ -7,20 +7,34 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
 
 private val DarkColorScheme = darkColors(
-    primary = DarkGreen,
-    secondary = DarkCream
+    primary = DarkBlue,
+    secondary = DarkOrange
 )
 
 private val LightColorScheme = lightColors(
-    primary = Green,
-    secondary = Cream
+    primary = Blue,
+    secondary = Orange
 )
+
+private val LocalDimens = staticCompositionLocalOf { DefaultDimens }
+
+@Composable
+fun ProvideDimens(
+    dimens: Dimensions,
+    content: @Composable () -> Unit
+) {
+    val dimensionSet = remember { dimens }
+    CompositionLocalProvider(LocalDimens provides dimensionSet, content = content)
+}
 
 @Composable
 fun SampleAppTheme(
@@ -44,9 +58,25 @@ fun SampleAppTheme(
         }
     }
 
-    MaterialTheme(
-        colors = colors,
-        typography = Typography,
-        content = content
-    )
+    ProvideDimens(dimens = DefaultDimens) {
+        MaterialTheme(
+            colors = colors,
+            typography = Typography,
+            content = content
+        )
+    }
 }
+
+object SampleAppTheme {
+    val dimens: Dimensions
+        @Composable
+        get() = LocalDimens.current
+
+    val typography: androidx.compose.material.Typography
+        @Composable
+        get() = MaterialTheme.typography
+}
+
+val Dimens: Dimensions
+    @Composable
+    get() = SampleAppTheme.dimens

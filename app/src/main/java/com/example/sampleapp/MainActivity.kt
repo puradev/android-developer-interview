@@ -21,11 +21,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.sampleapp.ui.theme.Dimens
 import com.example.sampleapp.ui.theme.SampleAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -46,16 +46,11 @@ fun MainScreen() {
         topBar = {
             TopAppBar(
                 backgroundColor = Color.White,
-                elevation = 6.dp
+                elevation = Dimens.elevationNormal
             ) {
                 Text(
                     text = "Dictionary",
-                    style = TextStyle(
-                        color = Color.Black,
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold,
-                        letterSpacing = (.5).sp
-                    ),
+                    style = SampleAppTheme.typography.h3,
                     textAlign = TextAlign.Center,
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -66,9 +61,9 @@ fun MainScreen() {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(24.dp)
+                    .padding(Dimens.paddingLarge)
                     .align(Alignment.TopStart),
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                horizontalArrangement = Arrangement.spacedBy(Dimens.paddingSmall),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 OutlinedTextField(
@@ -86,7 +81,7 @@ fun MainScreen() {
                     onClick = { /*TODO*/ },
                     modifier = Modifier
                         .height(intrinsicSize = IntrinsicSize.Max)
-                        .padding(top = 8.dp)
+                        .padding(top = Dimens.paddingSmall)
                 ) {
                     Text(text = "Search")
                 }

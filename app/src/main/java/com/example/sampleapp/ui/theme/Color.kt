@@ -2,8 +2,7 @@ package com.example.sampleapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val DarkGreen = Color(0xFF516360)
-val Green = Color(0xFF6D9387)
-val LightBlue = Color(0xFFCEDBD8)
-val Cream = Color(0xFFEDD8CA)
-val DarkCream = Color(0xFFD3C6B7)
+val DarkBlue = Color(0xFF0D47A1)
+val Blue = Color(0xFF1976D2)
+val Orange = Color(0xFFFF9100)
+val DarkOrange = Color(0xFFFF6D00)
