@@ -14,7 +14,7 @@ class WordsRepositoryImpl(private val wordsService: WordsService) : WordsReposit
         if (response.isSuccessful) {
             try {
                 val body = response.body()
-                if (body != null) {
+                if (!body.isNullOrEmpty()) {
                     val firstFoundWord = body.first()
                     Log.d(LOG_TAG, "Definition for word $word found $firstFoundWord")
                     return with(firstFoundWord) { WordData(word, function, definitions) }
