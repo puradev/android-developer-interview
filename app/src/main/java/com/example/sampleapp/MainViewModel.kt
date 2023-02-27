@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.sampleapp.api.WordsServiceImpl
 import com.example.sampleapp.repository.WordData
-import com.example.sampleapp.repository.WordNotFoundException
 import com.example.sampleapp.repository.WordsRepositoryImpl
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -27,9 +26,7 @@ class MainViewModel : ViewModel() {
     }
 
     fun onClickSearch() {
-        if (word.value.isBlank()) {
-            _mainState.value = MainState.Error(Error("No word provided"))
-        } else {
+        if (word.value.isNotBlank()) {
             searchWord()
         }
     }
@@ -43,11 +40,7 @@ class MainViewModel : ViewModel() {
             }.onSuccess {
                 _mainState.value = MainState.Success(it)
             }.onFailure {
-                if(it is NoSuchElementException) {
-                    _mainState.value = MainState.Error(WordNotFoundException(word.value))
-                } else {
-                    _mainState.value = MainState.Error(it)
-                }
+                _mainState.value = MainState.Error(it)
             }
         }
     }
