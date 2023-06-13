@@ -8,5 +8,3 @@ import retrofit2.Response
 interface WordsService {
     suspend fun getDefinitions(word: String): Response<List<GetDefinitionResponseEntity>>
 }
-
-

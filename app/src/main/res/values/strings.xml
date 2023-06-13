@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">SampleApp</string>
+
+    <string name="dictionary">Dictionary</string>
+    <string name="enter_word">Enter word</string>
+    <string name="search">Search</string>
+
+    <string name="waiting_input">Waiting input</string>
+    <string name="thinking">Thinking</string>
+    <string name="loading">Loading</string>
+    <string name="something_wrong">Something went wrong</string>
+    <string name="search_error">Search error</string>
+    <string name="function">(%s)</string>
+    <string name="definitions_accumulator">%s; %s</string>
+    <string name="definitions_end">%s.</string>
+    <string name="pura">Pura</string>
+    <string name="pura_description">Pura has created the world\'s first smart fragrance diffuser. It is a simple, yet elegant device that you plug into any outlet. Pura\'s fragrance brand marketplace allows customers to fully control the scents in your entire home; anytime, anywhere and from the biggest brands people know and trust.</string>
+    <string name="noun">noun</string>
 </resources>
