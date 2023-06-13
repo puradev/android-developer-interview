@@ -1,8 +1,8 @@
 package com.example.sampleapp.repository
 
 import android.util.Log
-import com.example.sampleapp.LOG_TAG
 import com.example.sampleapp.api.WordsService
+import com.example.sampleapp.utils.LOG_TAG
 
 /**
  * Created by Robert Duriancik on 17/01/2023.

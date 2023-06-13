@@ -1,4 +1,4 @@
-package com.example.sampleapp
+package com.example.sampleapp.utils
 
 /**
  * Created by Robert Duriancik on 20/01/2023.
